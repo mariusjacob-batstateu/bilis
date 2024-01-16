@@ -1,0 +1,7 @@
+{
+  "name": "bilis",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
