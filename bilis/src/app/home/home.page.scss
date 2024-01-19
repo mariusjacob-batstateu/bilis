@@ -1,4 +1,8 @@
 ion-content{
   text-align: center;
-  width: 70vw;
+}
+
+.search-section{
+  max-height: 200px;
+  overflow-y: scroll;
 }

@@ -1,8 +1,23 @@
 <ion-content>
   <h1>Bilis</h1>
-  <ion-input fill="outline" placeholder="Where do you want to go?" [(ngModel)]="placeSearch"> </ion-input>
-  <ion-button (click)="addDestination()">Add</ion-button>
 
+  <ion-item>
+    <ion-input fill="outline" placeholder="Where do you want to go?" [(ngModel)]="placeSearch">
+      <ion-button fill="clear" slot="end" aria-label="Show/hide" (click)="searchPlace()">
+        <ion-icon slot="icon-only" name="search" aria-hidden="true"></ion-icon>
+      </ion-button>
+    </ion-input>
+  </ion-item>
+
+  <ion-item *ngIf="queryResult">
+    <ion-item *ngFor="let result of queryResult">
+      <p slot="start">{{ result.title }}</p>
+      <p slot="end">{{ result.distance}} m</p>
+    </ion-item>
+    <br>
+  </ion-item>
+
+  <br><br><hr>
   <ion-item *ngFor="let dest of destination">
     <ion-text>{{dest}}</ion-text>
   </ion-item>
